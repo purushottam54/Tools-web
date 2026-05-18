@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        ul {
+            display: flex;
+            background-color: rgba(167, 153, 153, 0.5);
+            margin: 0;
+            /* padding: 10px; */
+        }
+        
+        ul li {
+            list-style: none;
+            margin: 5px 23px;
+            color: white;
+        }
+        
+        .nav-avatar {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .nav-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .code-block {
+            background-color: #000;
+            color: #fff;
+            font-family: Consolas, monospace;
+            padding: 10px;
+            white-space: pre;
+            overflow: auto;
+
+        }
+        .grid-item {
+            width: 90%;
+            height: 200px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item {
+
+            background-color: rgb(235, 175, 235);
+        }
+        .gif {
+            width: 300px; /* Adjust the width as desired */
+            height: auto; /* Maintain the aspect ratio */
+            padding-left: 30%;
+          }
+          .h1{
+            font-size: 50px;
+          }
+
+          .nav-avatar:hover{
+            transform: scale3d(1.1, 1.1, 1);
+          }
+
+        
+    </style>
+</head>
+<body>
+    <script>
+
+        function copyToClipboard() {
+            var codeBlock = document.getElementById("code");
+            var textarea = document.createElement("textarea");
+            textarea.value = codeBlock.textContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("Code copied to clipboard!");
+        }
+    </script>
+    <ul>
+        <li>
+            <div class="nav-avatar">
+                <a href="new2.html">
+                    <img src="download.jpeg" alt="avatar" />
+                </a>
+            </div>
+        </li>
+        <li><a href="new1.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="contactpage.html">Contact</a></li>
+    </ul>
+
+    <h1 class="h1">profil3r  <img class="gif" src="profil3r.gif" alt=""></h1>
+    
+    <div class="grid-item">
+        <h3>Profil3r is an OSINT tool that allows you to find potential profiles of a person on social networks, as well as their email addresses. This program also alerts you to the presence of a data leak for the found emails.</h3>
+        
+        
+    </div>
+    <h1>Installation</h1>
+
+    <div class="code-block" id="code">
+   $ git clone https://github.com/Rog3rSm1th/Profil3r.git
+   $ cd Profil3r/
+   $ python3 setup.py install
+    </div>
+
+    
+    <button onclick="copyToClipboard()">Copy</button>
+    <h1>USE</h1>
+    <div class="code-block" id="code">
+   $python3 profil3r.py <"name">
+    </div>
+    
+    <button onclick="copyToClipboard()">Copy</button>
+    
+</body>
+</html>

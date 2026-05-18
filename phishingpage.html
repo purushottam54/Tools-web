@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body{
+
+        /* background-color: aqua; */
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(45deg, #FFC107, #F44336, #E91E63, #9C27B0, #3F51B5, #03A9F4, #4CAF50);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        /* display: flex; */
+    }
+    @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    
+    li a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    ul {
+        display: flex;
+        background-color: rgba(167, 153, 153, 0.5);
+        margin: 0;
+        /* padding: 10px; */
+    }
+    
+    ul li {
+        list-style: none;
+        margin: 5px 23px;
+        color: white;
+    }
+    
+    .nav-avatar {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    .nav-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+        grid-gap: 20px; /* Gap between grid items */
+        max-width: 800px; /* Set a maximum width for the container if desired */
+        margin: 0 auto; /* Center the container horizontally */
+        padding-top: 10%;
+    }
+    
+    .grid-item {
+        background-color: rgba(167, 153, 153, 0.5);
+        padding: 20px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        
+    }
+    
+    .grid-item:hover {
+        background-color: grey;
+        color: #fff;
+    }
+    
+    div a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    
+    @media (max-width: 600px) {
+        .add {
+          grid-template-columns: repeat(1, 1fr);
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+    
+        #grid1 img,
+        #grid2 img {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    
+      .grid-item:hover{
+    
+            
+             transform: scale(1.1); 
+        
+            /* transform: skew(20deg,5deg); */
+        
+      }
+      .nav-avatar:hover{
+        transform: scale3d(1.1, 1.1, 1);
+      }
+   </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="nav-avatar">
+                <a href="new2.html">
+                    <img src="download.jpeg" alt="avatar" />
+                </a>
+            </div>
+        </li>
+        <li><a href="new1.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="contactpage.html">Contact</a></li>
+    </ul>
+    <div class="add">
+        <div class="container">
+            <a href="socialphish.html">
+            <div class="grid-item">
+                <h3>Socialphish</h3>
+            </div>
+        </a>
+        <a href="zphisher.html">
+            <div class="grid-item">
+                <h3>Zphisher</h3>
+            </div>
+        </a>
+        <a href="maxphisher.html">
+            <div class="grid-item">
+                <h3>Maxphisher</h3>
+            </div>
+        </a>
+        <a href="hiddeneye.html">
+            <div class="grid-item">
+                <h3>Hidden Eye</h3>
+            </div>
+        </a>
+        <a href="blackphish.html">
+            <div class="grid-item">
+                <h3>Blackphish</h3>
+            </div>
+        </a>
+        <a href="shellphish.html">
+            <div class="grid-item">
+                <h3>Shell phish</h3>
+            </div>
+        </a>
+        </div>
+    </div>
+
+</body>
+</html>

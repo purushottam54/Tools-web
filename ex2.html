@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Matrix Rain Background</title>
+
+  <style>
+
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Courier New", monospace;
+        background-color: #000;
+        color: #0f0; /* Green text color */
+      }
+      
+      .matrix-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+      
+      .code-rain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .code-character {
+        position: absolute;
+        font-size: 16px;
+        opacity: 0.8;
+        animation: flicker 0.2s linear infinite;
+      }
+      
+      @keyframes rain {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+      
+      @keyframes flicker {
+        0%, 100% {
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      
+      .content {
+        position: relative;
+        z-index: 1;
+        /* Additional styling for your content goes here */
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="matrix-bg">
+    <div class="code-rain">
+
+    </div>
+    <div class="content">
+      Your page content goes here
+    </div>
+  </div>
+  <script>
+    const codeRain = document.querySelector(".code-rain");
+
+    function createCodeCharacter() {
+      const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      return characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    
+    function createCodeRow() {
+      const codeRow = document.createElement("div");
+      codeRow.classList.add("code-row");
+    
+      for (let i = 0; i < 100; i++) {
+        const codeCharacter = document.createElement("span");
+        codeCharacter.classList.add("code-character");
+        codeCharacter.textContent = createCodeCharacter();
+        codeRow.appendChild(codeCharacter);
+      }
+    
+      return codeRow;
+    }
+    
+    function startMatrixRain() {
+      for (let i = 0; i < 30; i++) {
+        const codeRow = createCodeRow();
+        codeRain.appendChild(codeRow);
+      }
+    }
+    
+    startMatrixRain();
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Existing CSS styles */
+
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #FFC107, #F44336, #E91E63, #9C27B0, #3F51B5, #03A9F4, #4CAF50);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        ul {
+            display: flex;
+            background-color: rgba(167, 153, 153, 0.5);
+            margin: 0;
+        }
+        
+        ul li {
+            list-style: none;
+            margin: 5px 23px;
+            color: white;
+        }
+        
+        .nav-avatar {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .nav-avatar:hover{
+            transform: scale3d(1.1, 1.1, 1);
+          }
+        
+        
+        .nav-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            grid-gap: 20px; /* Gap between grid items */
+            max-width: 800px; /* Set a maximum width for the container if desired */
+            padding-left: 10%;
+            margin: 0 auto; /* Center the container horizontally */
+        }
+        
+        .grid-item {
+            background-color: rgba(167, 153, 153, 0.5);
+            padding: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .grid-item:hover {
+            background-color: gray;
+            color: #fff;
+            transform: scale(1.1);
+        }
+        
+        div a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="nav-avatar">
+                <a href="new2.html">
+                    <img src="download.jpeg" alt="avatar" />
+                </a>
+            </div>
+        </li>
+        <li><a href="new1.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="contactpage.html">Contact</a></li>
+    </ul>
+
+    <h1>PASSWORD CRACKING TOOLS</h1>
+    <br><br><br><br>
+    <div class="add">
+        <div class="container">
+            <a href="cilocks.html">
+                <div class="grid-item">
+                    <h3>Cilocks Tool</h3>
+                </div>
+       
+        </div>
+    </div>
+    
+    <script>
+        var gridItems = document.querySelectorAll('.grid-item');
+        
+        gridItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.classList.toggle('clicked');
+            });
+        });
+    </script>
+</body>
+</html>
